@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            background: linear-gradient(to right, #1a202c,#2d3748);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #90cdf4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.03rem; 
+            font-family: Arial, Helvetica, sans-serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .logo:hover{
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .h1{
+            font-size: 5rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -0.03rem; 
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #90cdf4;
+        }
+        .body{
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: whitesmoke;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+        }
+        .site-container{
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            background: white;
+        }
+        
+        #home {
+            padding: 8rem 3rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #AI {
+            padding: 8rem 3rem 4rem;
+            text-align: center;
+            background: white;
+            color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }   
+        #Projects{
+            padding: 2px 2px 2px 2px;
+            margin: 0px 0px 0px 0px;
+            align-items: center;
+            background: white;
+            color: rgb(0, 0, 0);
+            min-height: 100vh;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Audio {
+            padding: 4rem 3rem;
+            background:( #ffffff 100%);
+            color: white;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .video-container iframe {
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            background: linear-gradient(135deg, #420eff, #420eff);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #5fbcff, #4fcdff);
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .audio-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin: 2rem 0;
+            max-width: 500px;
+            width: 100%;
+        }
+
+
+        .audio-container p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: #667eea;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .audio-player audio::-webkit-media-controls-panel {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+        }
+
+        .audio-player audio::-webkit-media-controls-play-button {
+            border-radius: 50%;
+            color: rgb(5, 3, 3);
+            cursor: pointer;
+        }
+
+        .audio-player audio::-webkit-media-controls-current-time-display,
+        .audio-player audio::-webkit-media-controls-time-remaining-display {
+            color: rgb(0, 0, 0);
+        }
+
+        .audio-player audio::-webkit-media-controls-timeline {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .audio-player audio::-webkit-media-controls-volume-slider {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .home h1 {
+                font-size: 3rem;
+            }
+            
+            #home p {
+                font-size: 1.1rem;
+            }
+        }
+
+        #Education {
+            padding: 4rem 3rem;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            color: white;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Education h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #000000;
+        }
+
+        .education-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            height: 100%;
+            width: 70%;
+            justify-content: center;
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 8px solid #667eea;
+        }
+
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .education-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            color: #90cdf4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .education-item h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .education-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            color: #000000;
+        }
+
+        #Gallery {
+            padding: 4rem 3rem;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #Gallery h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #000000;
+            font-weight: 900;
+        }
+
+        .gallery-image {
+            width: 800px;
+            height: 4s0px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #6346f7;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        #Boxes {
+            padding: 4rem 3rem;
+            background: white;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Boxes h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .boxes-container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: #e8f5e8;
+            border: 1px solid #4CAF50;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 300px;
+            
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .box h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .box p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2E7D32;
+        }
+
+        .button-section {
+            padding: 4rem 3rem;
+            
+            text-align: center;
+            min-height: 40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="body">
+    <div class="site-container">
+        <header class="header">
+            <h1 class="logo">AI Future</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#AI">What is AI?</a></li>
+                    <li><a href="#Projects">Cards</a></li>
+                    <li><a href="#Audio">Audio</a></li>
+                    <li><a href="#Education">Applications</a></li>
+                    <li><a href="#Gallery"></a>Future Trends</li>
+                    <li><a href="#Boxes">Boxes</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <h1 class="h1">UNLOCKING TOMORROW: The Future of AI</h1>
+                <p>Explore the revolutionary advancements and ethical considerations shaping artificial intelligence</p>
+                <button class="button">DISCOVER MORE</button>
+                <button class="button">GENERATE NEW SLOGAN</button>
+            </section>
+            <section id="AI" >
+                <p>What is Artificial Intelligence?</p>
+                <img src="images/k-12.png" width="700px", height="700px">
+                <p>Arificial Intelligence (AI) is a branch of computer science focused on building machines capable of intelligent behaviour</p>
+            </section>
+            <section id="Projects">
+                <div class="video-container">
+                    <iframe width="800" height="500" src="https://www.youtube.com/embed/NANVkctWuyQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+            <section id="Audio">
+                <div class="audio-container">
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/success.mp3" type="audio/mpeg">
+                         
+                        </audio>
+                        <p>Audio: Ambient AI soundscape (source:SoundHelix)</p>
+                    </div>
+                </div>
+            </section>
+            <section id="Education">
+                <h1>Key AI Applications Shaping the Future</h1>
+                <div class="education-container">
+                    <div class="education-item">
+                        <span class="education-icon">🏥</span>
+                        <h2>AI in Healthcare</h2>
+                        <p>AI is revolutionizing healthcare through advanced diagnostics, personalized treatment plans, drug discovery, and predictive analytics. Machine learning algorithms can analyze medical images, predict patient outcomes, and assist doctors in making more accurate diagnoses.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">🚗</span>
+                        <h2>Autonomous Vehicles</h2>
+                        <p> AI powers self-driving cars, enabling them to navigate roads safely, interpret traffic signals, and make real-time decisions. This technology promises to reduce accidents, improve traffic flow, and provide mobility solutions for people who cannot drive.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">📊</span>
+                        <h2>Advanced Data Analytics</h2>
+                        <p>AI-driven analytics processes vast amounts of data to uncover patterns, trends, and insights that humans might miss. This technology helps businesses make data-driven decisions, predict market trends, and optimize operations for better efficiency and profitability.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">🎓</span>
+                        <h2>Personalized Education</h2>
+                        <p>AI is transforming education by creating personalized learning experiences tailored to each student's pace, style, and needs. Adaptive learning platforms use AI to adjust content difficulty, provide instant feedback, and identify areas where students need additional support.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">🎓</span>
+                        <h2>Personalized Education</h2>
+                        <p>AI is transforming education by creating personalized learning experiences tailored to each student's pace, style, and needs. Adaptive learning platforms use AI to adjust content difficulty, provide instant feedback, and identify areas where students need additional support.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">🎓</span>
+                        <h2>Personalized Education</h2>
+                        <p>AI is transforming education by creating personalized learning experiences tailored to each student's pace, style, and needs. Adaptive learning platforms use AI to adjust content difficulty, provide instant feedback, and identify areas where students need additional support.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">🎓</span>
+                        <h2>Personalized Education</h2>
+                        <p>AI is transforming education by creating personalized learning experiences tailored to each student's pace, style, and needs. Adaptive learning platforms use AI to adjust content difficulty, provide instant feedback, and identify areas where students need additional support.</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-icon">💻</span>
+                        <h2>Personalized Education</h2>
+                        <p>AI is transforming education by creating personalized learning experiences tailored to each student's pace, style, and needs. Adaptive learning platforms use AI to adjust content difficulty, provide instant feedback, and identify areas where students need additional support.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="Gallery">
+                <h1>FUTURE OF AI: Key Trends</h1>
+                <img src="https://imageio.forbes.com/specials-images/imageserve/66bee357cf48b97789cbc270/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="AI Technology Visualization" class="gallery-image">
+                <p class="gallery-paragraph">
+                   Dive into the exciting trends that are poised to shape the next era of Artificial intelligence
+                </p>
+            </section>
+            
+            <section id="Boxes">
+                <h1>Boxes</h1>
+                <div class="boxes-container">
+                    <div class="box">
+                        <h2>Explainable AI(XAI)</h2>
+                        <p>Making AI decisions transparent and understandable to greater trust and accountability.</p>
+                    </div>
+                    <div class="box">
+                        <h2>Edge AI</h2>
+                        <p>Processing AI directly on devices for faster, more private interfaces.</p>
+                    </div>
+                    <div class="box">
+                        <h2>Generative AI Growth</h2>
+                        <p>Continued rapid advancement in AI that creates New content, from text to images and code.</p>
+                    </div>
+                </div>
+
+            <div class="button-section">
+                <button class="button">GENERATE NEW AI FACTS</button>
+            </div>
+           </section>
+        </main>            
+       
+        <footer>
+            <section id="Contact">
+                <h1>CONTACT</h1>
+                <p>Copyright &copy; 2025 AI Future</p>
+            </section> 
+        </footer>
+    </div>
+</body>
+</html>
